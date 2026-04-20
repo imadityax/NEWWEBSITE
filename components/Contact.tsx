@@ -1,63 +1,80 @@
 'use client'
+import { Mail, Phone, MapPin, Plus, Minus } from 'lucide-react'
 import { useState } from 'react'
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+export default function Contact(){
+  const faqs = [
+    {
+      q: 'How can I get in touch for collaborations?',
+      a: 'Reach out through our contact form or email us directly. We review every inquiry carefully.',
+    },
+    {
+      q: 'Where can I find information on campaigns and releases?',
+      a: 'Visit our updates section for the latest launches, campaigns and announcements.',
+    },
+    {
+      q: 'How can I reach customer support?',
+      a: 'Our support team is available through email and business hours contact channels.',
+    },
+    {
+      q: 'How to purchase our products/services?',
+      a: 'Send us your requirements and our team will guide you with the right solution.',
+    },
+  ]
 
-  const handleSubmit = (e: React.MouseEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', form)
-    // Add your form submission logic here
-  }
+  const [open, setOpen] = useState(0)
 
   return (
-    <section id="contact" className="py-16 px-8 md:px-16 bg-gradient-to-br from-[#1a0a2e] via-[#2d1a5e] to-[#3d2080]">
-      <div className="flex flex-col md:flex-row gap-10 items-center">
-        <div className="flex-1">
-          <p className="text-white/60 text-sm mb-2">Get in Touch with Us</p>
-          <h2 className="text-3xl font-bold text-white mb-3">Get in Touch with Us</h2>
-          <p className="text-white/70 text-sm mb-6">
-            Build a career advancing cognitive science and technology.
-          </p>
-          <button className="text-sm text-white border border-white px-5 py-2 rounded-full hover:bg-white hover:text-[#1a0a2e] transition-colors">
-            Call to-action →
-          </button>
-        </div>
+    <section className='min-h-screen bg-white px-6 md:px-14 py-10'>
+      <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start'>
+        <div>
+        
+          <h1 className='text-6xl md:text-8xl font-black leading-none text-black'>
+            CONTACT <span className='text-[#0f1f45]'>US</span>
+          </h1>
 
-        <div className="flex-1 w-full">
-          <div className="bg-white rounded-xl p-6 shadow-xl">
-            <div className="space-y-3">
-              <input
-                type="text"
-                placeholder="Name"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2d0a4e] focus:border-transparent"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2d0a4e] focus:border-transparent"
-              />
-              <textarea
-                placeholder="Message"
-                rows={4}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2d0a4e] focus:border-transparent resize-none"
-              />
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-[#2d0a4e] text-white py-2.5 rounded-lg text-sm font-medium hover:bg-[#1a0a2e] transition-colors"
-              >
-                Contact
-              </button>
+          <p className='mt-6 text-gray-600 max-w-md'>
+            For inquiries, collaborations, or to say hello, we'd love to hear from you. Reach out and let's connect.
+          </p>
+
+          <div className='mt-10 space-y-8'>
+            <div>
+              <h3 className='font-black text-2xl mb-2'>PRESS</h3>
+              <p className='text-gray-600 flex gap-2 items-start'>
+                <MapPin size={18} /> Global Media Office, Innovation District
+              </p>
+            </div>
+
+            <div>
+              <h3 className='font-black text-2xl mb-2'>SALES</h3>
+              <p className='text-gray-600 flex gap-2 items-center'>
+                <Mail size={18} /> sales@yourbrand.com
+              </p>
+            </div>
+
+            <div>
+              <h3 className='font-black text-2xl mb-2'>HEAD OFFICE</h3>
+              <p className='text-gray-600 flex gap-2 items-start'>
+                <MapPin size={18} /> Sector 62, Noida, India
+              </p>
             </div>
           </div>
         </div>
+
+        <div className='relative'>
+          <div className='rounded-[2rem] bg-[#0f1f45] h-[680px] overflow-hidden relative p-10'>
+            <div className='absolute inset-0 bg-gradient-to-br from-[#0f1f45] to-[#1e3a8a]' />
+            <div className='relative z-10 text-white'>
+              <p className='uppercase tracking-[0.35em] text-sm mb-3'>Let's Build</p>
+              <h2 className='text-5xl font-black leading-tight'>Future Ready Experiences</h2>
+              <p className='mt-4 text-white/80 max-w-sm'>We create digital systems, products and modern brand experiences.</p>
+            </div>
+            <div className='absolute bottom-0 right-0 w-[80%] h-[70%] bg-white/10 rounded-tl-[3rem]' />
+          </div>
+        </div>
       </div>
+
+      
     </section>
   )
 }

@@ -12,6 +12,16 @@ export default function CareersPage() {
   // State for General Resume Modal
   const [isGeneralApply, setIsGeneralApply] = useState(false);
 
+  const categories = [
+    "All",
+    "Design",
+    "Development",
+    "Product",
+    "Marketing",
+    "Analytics",
+    "Human Resources",
+  ];
+
   const jobs = [
     {
       title: "UI/UX Designer",
@@ -57,28 +67,32 @@ export default function CareersPage() {
       desc: "Learn and grow in the field of human intelligence & neuroscience",
     },
     {
-      title: "Ownership",
-      desc: "Work on real projects with ownership and responsibility",
+      title: "Backend Developer",
+      desc: "Develop secure scalable APIs, cloud systems and enterprise architecture.",
     },
-    { title: "Culture", desc: "Purpose-driven and supportive team culture" },
     {
-      title: "Collaboration",
-      desc: "Strong in-office collaboration and hands-on experience",
+      title: "Product Manager",
+      desc: "Lead product vision, strategy and execution for our cognitive training platform.",
     },
-    { title: "Social Impact", desc: "Meaningful work with social impact" },
-  ];
-
-  const categories = [
-    "All",
-    ...Array.from(new Set(jobs.map((j) => j.category))),
+    {
+      title: "Data Scientist",
+      desc: "Analyze brain data, optimize algorithms and drive insights for cognitive performance.",
+    },
+    {
+      title: "UX Researcher",
+      desc: "Conduct user research to inform design of intuitive cognitive training interfaces.",
+    },
+    {
+      title: "AI Engineer",
+      desc: "Build intelligent systems that adapt and personalize cognitive training experiences.",
+    },
   ];
 
   const filteredJobs =
-    filter === "All" ? jobs : jobs.filter((j) => j.category === filter);
+    filter === "All" ? jobs : jobs.filter((job) => job.category === filter);
 
   return (
-    <main className="min-h-screen bg-[#fcfcfc] text-black">
-      {/* Hero Section */}
+    <main className="min-h-screen bg-[#f5f5f5] text-black">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] via-[#1e3a8a] to-[#2563eb] text-white py-28 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <p className="uppercase tracking-[0.35em] text-sm text-white/70 mb-5">
@@ -148,7 +162,7 @@ export default function CareersPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {filteredJobs.map((job, index) => (
+            {filteredJobs?.map((job, index) => (
               <div
                 key={index}
                 className="bg-[#f5f5f5] p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col group"

@@ -1,49 +1,46 @@
-const projects = [
-  {
-    title: 'Building the Future of Neuro-Education',
-    desc: 'Integrating AI and neuroscience for personalized learning',
-    img: 'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=400',
-  },
-  {
-    title: 'Empowering Educators with Advanced Tools',
-    desc: 'Training programs for modern teaching',
-    img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400',
-  },
-  {
-    title: 'Pioneering Cognitive Health Solutions',
-    desc: 'Researching new methods for mental wellness',
-    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400',
-  },
-]
+export default function OurWorks(){
+  const cards=[
+    {title:'Marketplace UI', cls:'top-12 right-10 bg-yellow-400 w-64 h-28'},
+    {title:'Blockchain App', cls:'left-8 top-64 bg-pink-300 w-64 h-32'},
+    {title:'Mobile Product', cls:'right-32 top-56 bg-white w-52 h-24'}
+    
+  ];
 
-export default function WorkingOn() {
   return (
-    <section className="py-16 px-8 md:px-16 bg-gray-50">
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">What we are Working on Today</h2>
-        <button className="text-sm text-[#2d0a4e] border border-[#2d0a4e] px-4 py-1.5 rounded-full hover:bg-[#2d0a4e] hover:text-white transition-colors">
-          View All
-        </button>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {projects.map((project) => (
-          <div key={project.title} className="relative rounded-xl overflow-hidden h-64 cursor-pointer group">
-            <div
-              className="absolute inset-0 group-hover:scale-105 transition-transform duration-300"
-              style={{
-                backgroundImage: `url('${project.img}')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="text-white font-bold text-sm mb-1">{project.title}</h3>
-              <p className="text-white/70 text-xs">{project.desc}</p>
-            </div>
+    <section className='w-full min-h-screen bg-white rounded-3xl p-8 md:p-16 overflow-hidden relative'>
+      <div className='absolute w-40 h-40 bg-pink-200/40 rounded-full -top-10 -left-10' />
+      <div className='absolute w-40 h-40 bg-purple-200/30 rounded-full top-10 -right-10' />
+
+      <h2 className='text-5xl md:text-6xl font-black tracking-tight mb-10'>Our Work</h2>
+
+      <div className='relative max-w-5xl mx-auto mt-10'>
+        <div className='mx-auto w-full max-w-4xl h-[430px] bg-gray-200 rounded-[28px] shadow-2xl border-[14px] border-gray-100 relative overflow-hidden'>
+          <div className='absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600' />
+
+          <div className='absolute left-8 top-12 text-white max-w-sm'>
+            <p className='uppercase text-xs tracking-[0.4em] opacity-80'>Post your cars</p>
+            <h3 className='text-4xl font-black leading-tight mt-4'>AN INDUSTRY'S LEADING CAR-SELLING PLATFORM</h3>
+            <button className='mt-6 px-5 py-2 rounded-full bg-teal-400 text-black font-semibold'>Let's Talk</button>
+          </div>
+
+          <div className='absolute right-8 bottom-8 grid grid-cols-2 gap-4 w-[42%]'>
+            <div className='bg-white rounded-2xl h-28' />
+            <div className='bg-teal-300 rounded-2xl h-28' />
+            <div className='bg-white rounded-2xl h-28' />
+            <div className='bg-cyan-300 rounded-2xl h-28' />
+          </div>
+        </div>
+
+        {cards.map((card,i)=>(
+          <div key={i} className={`absolute rounded-2xl shadow-xl p-4 ${card.cls}`}>
+            <div className='text-sm font-bold text-black/80'>{card.title}</div>
           </div>
         ))}
+
+        <div className='mx-auto w-full max-w-5xl h-8 bg-gray-300 rounded-b-full mt-2 shadow-inner' />
       </div>
+
+      <p className='text-center tracking-[0.6em] text-xl mt-14'>WEBSITE</p>
     </section>
   )
 }
