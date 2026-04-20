@@ -1,45 +1,124 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+
 const servicesList = [
-  'Neurofeedback Training',
-  'Cognitive Enhancement',
-  'VR Learning Modules',
-  'Brain Mapping Analysis',
-  'Executive Functioning Skills',
-  'Personalized Learning Plans',
+  {
+    title: 'Decision Architecture',
+    desc: 'We help individuals and organizations build clearer thinking systems, stronger judgment models, and practical decision frameworks for real-world success.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
+  },
+  {
+    title: 'Cognitive Activation',
+    desc: 'Our programs are designed to sharpen memory, focus, processing speed, and adaptive intelligence using immersive and performance-driven methods.',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800',
+  },
+  {
+    title: 'Leadership Intelligence',
+    desc: 'Develop leadership presence, execution discipline, communication depth, and conscious action for high-pressure environments.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
+  },
 ]
 
 export default function Services() {
+  const [visible, setVisible] = useState<boolean[]>(servicesList.map(() => false))
+  const blockRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+
+    blockRefs.current.forEach((el, i) => {
+      if (!el) return
+
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible((prev) => {
+              const next = [...prev]
+              next[i] = true
+              return next
+            })
+            obs.disconnect()
+          }
+        },
+        { threshold: 0.1 }
+      )
+
+      obs.observe(el)
+      observers.push(obs)
+    })
+
+    return () => observers.forEach((o) => o.disconnect())
+  }, [])
+
   return (
-    <section id="home" className="py-16 px-8 md:px-16 bg-white border-t border-gray-100">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Services</h2>
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex-1">
-          <ul className="space-y-3">
-            {servicesList.map((service) => (
-              <li
-                key={service}
-                className="py-3 px-4 border-b border-gray-200 text-gray-700 text-sm hover:text-[#2d0a4e] cursor-pointer transition-colors"
-              >
-                {service}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex-1 relative rounded-xl overflow-hidden min-h-[250px] bg-gray-900">
-          <div
-            className="absolute inset-0 opacity-70"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <button className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-              <svg className="w-5 h-5 text-[#2d0a4e] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </button>
+    <section id="services" className="py-24 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 md:px-16">
+
+        <div className="flex gap-20">
+
+          {/* Left Sticky Label */}
+          <div className="hidden md:flex flex-col items-start w-44 flex-shrink-0">
+            <div className="sticky top-32 pt-20">
+              <p className="text-s uppercase tracking-[0.35em] text-gray-800 font-semibold">
+                Our Services
+              </p>
+
+              <div className="mt-4 w-10 h-[2px] bg-blue-600 rounded" />
+            </div>
           </div>
+
+          {/* Right Content */}
+          <div className="flex-1 flex flex-col divide-y divide-gray-100">
+            {servicesList.map((service, index) => {
+              const isReverse = index % 2 !== 0
+
+              return (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    blockRefs.current[index] = el
+                  }}
+                  style={{
+                    opacity: visible[index] ? 1 : 0,
+                    transform: visible[index]
+                      ? 'translateY(0)'
+                      : 'translateY(30px)',
+                    transition: 'all 0.7s ease',
+                    transitionDelay: `${index * 120}ms`,
+                  }}
+                  className={`flex flex-col md:flex-row items-center gap-14 py-16 ${
+                    isReverse ? 'md:flex-row-reverse' : ''
+                  }`}
+                >
+                  {/* Image */}
+                  <div className="flex-shrink-0">
+                    <div className="w-52 h-52 md:w-60 md:h-60 rounded-full overflow-hidden ring-4 ring-gray-100 hover:scale-105 transition duration-500">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Text */}
+                  <div className="flex-1 max-w-xl">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-gray-500 leading-relaxed mb-6">
+                      {service.desc}
+                    </p>
+
+                    
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
         </div>
       </div>
     </section>
