@@ -2,7 +2,9 @@ import Link from 'next/link'
 import { blogPosts } from '@/app/blog/blogData'
 
 export default function Blog() {
-  const uniqueCategories = [...new Set(blogPosts.map(post => post.category))];
+  const uniqueCategories = Array.from(
+  new Set(blogPosts.map(post => post.category))
+);
 
   return (
     <section className="py-16 px-8 md:px-16 bg-white w-full ml-32 mr-32">
