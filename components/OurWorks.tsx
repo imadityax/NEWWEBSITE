@@ -1,88 +1,104 @@
+'use client'
+
+import {
+  Search,
+  Bot,
+  BriefcaseBusiness,
+  Brain,
+  GraduationCap,
+  BarChart3,
+} from 'lucide-react'
+
 const works = [
   {
-    icon: '🧠',
+    title: 'Decision Architecture',
+    desc: 'Build stronger thinking systems and practical judgment frameworks.',
+    bg: 'bg-[#f4d7f7]',
+    icon: Search,
+  },
+  {
+    title: 'AI Intelligence Labs',
+    desc: 'Automation systems for complex patterns and future decisions.',
+    bg: 'bg-[#d8f5d7]',
+    icon: Bot,
+  },
+  {
+    title: 'Leadership Systems',
+    desc: 'Enhancing execution, clarity, and conscious action systems.',
+    bg: 'bg-[#ece7e3]',
+    icon: BriefcaseBusiness,
+  },
+  {
     title: 'Cognitive Training',
-    desc: 'Enhancing memory and focus through advanced modules',
-    bg: 'bg-pink-100',
-    iconBg: 'bg-pink-200',
+    desc: 'Interactive learning systems designed for modern minds.',
+    bg: 'bg-[#f6a8c8]',
+    icon: Brain,
+    large: true,
   },
   {
-    icon: '🥽',
-    title: 'VR Modules',
-    desc: 'Immersive learning experiences for skill acquisition',
-    bg: 'bg-green-100',
-    iconBg: 'bg-green-200',
+    title: 'Education Platforms',
+    desc: 'Structured learning resources and intelligence tools.',
+    bg: 'bg-[#f7e08c]',
+    icon: GraduationCap,
   },
   {
-    icon: '🎧',
-    title: 'Brain Mapping',
-    desc: 'Comprehensive analysis of neural activity',
-    bg: 'bg-blue-100',
-    iconBg: 'bg-blue-200',
-  },
-  {
-    icon: '📊',
-    title: 'Executive Skills',
-    desc: 'Improving planning and problem-solving abilities',
-    bg: 'bg-yellow-100',
-    iconBg: 'bg-yellow-200',
-  },
-  {
-    icon: '📋',
-    title: 'Personalized Plans',
-    desc: 'Tailored programs for individual growth',
-    bg: 'bg-purple-100',
-    iconBg: 'bg-purple-200',
-  },
-  {
-    icon: '🤝',
-    title: 'Research Partnerships',
-    desc: 'Collaborating with leading institutions',
-    bg: 'bg-teal-100',
-    iconBg: 'bg-teal-200',
-  },
-  {
-    icon: '📈',
-    title: 'Data Analytics',
-    desc: 'Utilizing data for optimized outcomes',
-    bg: 'bg-sky-100',
-    iconBg: 'bg-sky-200',
-  },
-  {
-    icon: '🧬',
-    title: 'Neurofeedback',
-    desc: 'Real-time training for self-regulation',
-    bg: 'bg-cyan-100',
-    iconBg: 'bg-cyan-200',
-  },
-  {
-    icon: '🎓',
-    title: 'Educational Programs',
-    desc: 'Empowering students with future skills',
-    bg: 'bg-indigo-100',
-    iconBg: 'bg-indigo-200',
+    title: 'Performance Analytics',
+    desc: 'Measure growth, outcomes, and decision efficiency.',
+    bg: 'bg-[#cfe8ff]',
+    icon: BarChart3,
   },
 ]
 
 export default function OurWorks() {
   return (
-    <section className="py-16 px-8 md:px-16 bg-gray-50">
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Our Works</h2>
-        <button className="text-sm text-[#2d0a4e] border border-[#2d0a4e] px-4 py-1.5 rounded-full hover:bg-[#2d0a4e] hover:text-white transition-colors">
-          View All
-        </button>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {works.map((work) => (
-          <div key={work.title} className={`${work.bg} rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow`}>
-            <div className={`${work.iconBg} w-10 h-10 rounded-lg flex items-center justify-center text-xl mb-3`}>
-              {work.icon}
-            </div>
-            <h3 className="font-semibold text-gray-900 text-sm mb-1">{work.title}</h3>
-            <p className="text-gray-600 text-xs leading-relaxed">{work.desc}</p>
-          </div>
-        ))}
+    <section className="pt-10 pb-4 px-8 md:px-16 bg-white">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Heading */}
+        <div className="mb-12">
+          <p className="text-sm uppercase tracking-[0.35em] text-[#C9A227] font-bold mb-3">
+            Our Works
+          </p>
+
+          <h2 className="text-5xl md:text-6xl font-black text-black">
+            What We Build
+          </h2>
+        </div>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-4 auto-rows-[320px]">
+          {works.map((work, index) => {
+            const Icon = work.icon
+
+            return (
+              <div
+                key={index}
+                className={`${work.bg} rounded-[2rem] p-8 relative overflow-hidden group hover:-translate-y-2 transition duration-500 ${
+                  work.large ? 'md:col-span-2' : ''
+                }`}
+              >
+                {/* Better Icon */}
+                <div className="mb-8 group-hover:scale-110 transition duration-500">
+                  <Icon
+                    size={90}
+                    strokeWidth={1.5}
+                    className="text-black/80"
+                  />
+                </div>
+
+                {/* Text */}
+                <h3 className="text-2xl font-black text-black mb-4">
+                  {work.title}
+                </h3>
+
+                <p className="text-gray-800 leading-relaxed max-w-sm">
+                  {work.desc}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+
       </div>
     </section>
   )

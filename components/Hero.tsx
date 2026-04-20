@@ -1,30 +1,62 @@
-import Navbar from './Navbar'
+"use client";
+
+import { useEffect, useState } from "react";
+import Navbar from "./Navbar";
 
 export default function Hero() {
+  const images = [
+    "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1600",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600",
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600",
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600",
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-[500px] bg-gradient-to-br from-[#1a0a2e] via-[#2d0a4e] to-[#4a0e6b] overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-white">
       <Navbar />
 
-      {/* Background image overlay */}
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-        }}
-      />
+      {/* Background Slider */}
+      {images.map((img, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === current ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            backgroundImage: `url(${img})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      ))}
 
-      <div className="relative z-10 flex flex-col justify-center min-h-[500px] px-8 md:px-16 pt-24 pb-16 max-w-lg">
-        <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight mb-8">
-          Highly Interactive Cognitive Learning Systems
-        </h1>
-        <button className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-[#1a0a2e] transition-colors">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
+      {/* Overlay */}
+      <div className="absolute inset-0 "></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 min-h-screen flex items-center">
+        <div className="w-full md:w-1/2">
+          <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-10">
+            Highly Interactive <br />
+            Cognitive Learning <br />
+            Systems
+          </h1>
+
+          <button className="w-14 h-14 rounded-full border-2 border-white text-white flex items-center justify-center hover:bg-white hover:text-pink-500 transition">
+            →
+          </button>
+        </div>
       </div>
     </section>
-  )
+  );
 }
