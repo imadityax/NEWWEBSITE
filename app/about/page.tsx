@@ -1,5 +1,7 @@
 'use client'
 
+import Footer from "@/components/Footer";
+
 
 
 export default function AboutPage(){
@@ -353,24 +355,9 @@ export default function AboutPage(){
         </section>
 
         {/* Footer */}
-        <section className="py-20 px-6 bg-[#f7f7f7]">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center border-t border-gray-200 pt-14">
-            <div>
-              <h3 className="text-4xl font-bold mb-6">Aaruchudar Software Solutions Pvt. Ltd.</h3>
-              <p className="text-lg text-gray-700 leading-8">3000 Caman Street<br/>+91 987358 0000<br/>aaruchudar@rvmarix.com</p>
-              <div className="flex gap-4 mt-6 text-2xl">
-                <span>◉</span><span>◎</span><span>◌</span><span>◍</span>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-6 place-items-center">
-              {['RV Matrix 2025','Excellence Award','Leadership Award','Best Brand'].map((a)=>(
-                <div key={a} className="bg-white border rounded-2xl p-8 text-center font-semibold shadow-md w-full h-36 flex items-center justify-center">{a}</div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Footer />
 
-        <section className="bg-gradient-to-r from-[#0b49c8] to-[#2d67d6] text-white py-10 text-center text-5xl font-serif tracking-wide">Aaruchudar<br/><span className="text-2xl font-sans tracking-[0.35em] uppercase">Endless Innovation</span></section>
+       
       </main>
     </>
   )
