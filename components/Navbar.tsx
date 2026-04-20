@@ -14,7 +14,8 @@ export default function Navbar() {
   const links = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Resources', href: '/resources' },
+    { name: 'blog', href: '/blog' },
+    { name: 'careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -60,7 +61,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block hover:text-pink-400"
+                className="block hover:text-blue-400"
               >
                 {item.name}
               </Link>

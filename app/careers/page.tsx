@@ -27,10 +27,11 @@ export default function CareersPage() {
       desc: 'Develop secure scalable APIs, cloud systems and enterprise architecture.',
     },
   ]
-
+const bubbles = Array.from({length:18},(_,i)=>i);
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-black">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#111827] via-[#1e3a8a] to-[#2563eb] text-white py-28 px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0d47a1] to-[#1a3a70] text-white py-28 px-6">
+        {bubbles.map((i: number)=>{ const size=[20,28,36,48,64,80][i%6]; const left=(i*13)%100; const top=(i*17)%100; const opacity=(i%4+2)/10; return <div key={i} className="absolute rounded-full bg-white/10" style={{width:size,height:size,left:`${left}%`,top:`${top}%`,opacity}}/>})}
         <div className="max-w-7xl mx-auto text-center">
           <p className="uppercase tracking-[0.35em] text-sm text-white/70 mb-5">Careers at Aaruchudar</p>
           <h1 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto leading-tight">

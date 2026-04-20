@@ -1,14 +1,14 @@
 'use client'
 
-import Navbar from '@/components/Navbar'
+
 
 export default function AboutPage(){
   const bubbles = Array.from({length:18},(_,i)=>i);
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen bg-[#f5f5f5] text-black overflow-hidden pt-20">
-        
+   
+      <main className="min-h-screen bg-[#f5f5f5] text-black  overflow-x-hidden">
+           
         {/* HERO SECTION - Who You Are */}
         <section className="relative min-h-[80vh] bg-gradient-to-br from-[#0d47a1] to-[#1a3a70] text-white flex items-center justify-center px-6 py-20 overflow-hidden">
           {bubbles.map((i)=>{ const size=[20,28,36,48,64,80][i%6]; const left=(i*13)%100; const top=(i*17)%100; const opacity=(i%4+2)/10; return <div key={i} className="absolute rounded-full bg-white/10" style={{width:size,height:size,left:`${left}%`,top:`${top}%`,opacity}}/>})}
