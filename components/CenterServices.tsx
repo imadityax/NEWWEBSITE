@@ -7,49 +7,49 @@ const serviceCards = [
     title: 'Clarity as Culture',
     desc: 'Builds clarity as a consistent way of thinking, helping individuals reduce confusion and approach situations with structured understanding.',
     bg: 'bg-[#c8e6a0]',
-    img: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=300',
+    img: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=300', // clean bright desk, clear/minimal
   },
   {
     title: 'Decision Making Without Drama',
     desc: 'Enables calm and practical decision-making by reducing overthinking and emotional noise.',
     bg: 'bg-[#a8cfe0]',
-    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300',
+    img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=300', // calm person thinking at table
   },
   {
     title: 'Inner Focus in a Noisy World',
     desc: 'Strengthens the ability to stay mentally focused and fully engaged despite constant distractions.',
     bg: 'bg-[#f0e8b4]',
-    img: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=300',
+    img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=300', // person meditating/focused alone
   },
   {
     title: 'The Power of Listening',
     desc: 'Develops the ability to truly understand others, improving connection and communication.',
     bg: 'bg-[#d4b8e8]',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300',
+    img: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=300', // two people in deep conversation
   },
   {
     title: 'Intelligent Conflict and Recovery',
     desc: 'Equips individuals to handle conflicts with awareness and recover effectively without lasting impact.',
     bg: 'bg-[#f7c3cb]',
-    img: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300',
+    img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=300', // handshake / resolution moment
   },
   {
     title: 'Systematic Thinking',
     desc: 'Encourages structured, step-by-step thinking to improve clarity and problem-solving.',
     bg: 'bg-[#b8e8d4]',
-    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300',
+    img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=300', // person planning with structured notes
   },
   {
     title: 'Voice, Value and Vulnerability',
     desc: 'Builds confident and authentic self-expression through deeper self-awareness.',
     bg: 'bg-[#ffd9a8]',
-    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300',
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300', // person confidently speaking to group
   },
   {
     title: 'Leadership Without Imitation',
     desc: 'Develops original leadership by encouraging independent thinking and ownership.',
     bg: 'bg-[#d6d6ff]',
-    img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300',
+    img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300', // person leading a team naturally
   },
 ]
 

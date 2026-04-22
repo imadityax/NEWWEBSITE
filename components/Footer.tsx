@@ -64,13 +64,7 @@ export default function Footer() {
         ))}
 
         <div className='md:col-span-1'>
-          <div className='border border-gray-200 rounded-2xl p-4 bg-white mb-10'>
-            <div className='h-20 rounded-xl bg-gradient-to-r from-[#0f1f45] to-[#1e40af] mb-4' />
-            <p className='text-xs tracking-[0.3em] text-sky-700 font-bold'>
-              DEMO VIDEO
-            </p>
-            <p className='text-xl font-semibold mt-2'>See Our Work</p>
-          </div>
+          
 
           <div className='flex gap-3'>
             <a

@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
       title: 'The Science Behind Gut Feeling - Is It Real, or Just in Your Head?',
       desc: 'What gut feeling really is, how intuition forms in the brain, and when to trust it versus question it.',
       date: 'April 2026',
-      image: '/blog-images/Shutterstock_2198678569.jpg',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800',
       content: `The Science Behind Gut Feeling - Is It Real, or Just in Your Head?
 
 You're about to make a decision. Nothing dramatic. Just something simple - choosing a job, trusting a person, saying yes or no.
@@ -104,7 +104,7 @@ Because clarity doesn't come from ignoring your instincts, and it doesn't come f
       title: 'The Day He Stopped Saying Okay',
       desc: 'A quiet workplace story about how attention, not just knowledge, can change performance and growth.',
       date: 'April 2026',
-      image: '/blog-images/tired-exhausted-arabic-indian-man-600nw-2163297479.jpg',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800',
       content: `The Day He Stopped Saying Okay
 
 Arjun got his first job. There was nothing dramatic about it, no big celebration - just a quiet feeling inside him: "Okay... life is starting now."
@@ -141,7 +141,7 @@ We often think mistakes come from a lack of knowledge. But sometimes, they come 
       title: 'The Resume Is Dead: What Actually Gets You Hired Today?',
       desc: 'Why hiring decisions now favor real-world thinking, adaptability, and communication over polished resumes.',
       date: 'April 2026',
-      image: '/blog-images/PHOTO-2026-04-15-18-51-47.jpg',
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800',
       content: `The Resume Is Dead: What Actually Gets You Hired Today?
 
 At Aaruchudar, we've observed something that challenges everything students have been told for years.
@@ -174,7 +174,7 @@ Because in the end, what truly gets you hired is not what's written on a page. I
       title: 'She Failed 3 Times, Then Her Brain Finally Clicked',
       desc: 'Ananya failed repeatedly, but her brain was adapting in the background. A real story of neuroplasticity and progress.',
       date: 'April 2026',
-      image: '/blog-images/WhatsApp Image 2026-04-07 at 17.27.25.jpeg',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800',
       content: `She Failed 3 Times, Then Her Brain Finally Clicked
 
 Ananya stared at the number glowing on her screen - 32.
@@ -219,7 +219,7 @@ Ananya didn't become smarter in a day. Her brain simply learned how to learn. An
       title: 'Emotions: Your Greatest Strength or Silent Sabotage?',
       desc: 'Emotions are signals, not enemies. Learn how they arise in the brain and how to regulate them without losing clarity.',
       date: 'April 2026',
-      image: '/blog-images/63736b7750723ca6336813d7_Emotional dysregulation-min.jpg',
+      image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=800',
       content: `Emotions: Your Greatest Strength or Silent Sabotage?
 
 Where Do Emotions Actually Come From?
@@ -284,7 +284,7 @@ Your emotions can either build your life or break your clarity. The choice is no
       title: 'The Power of Mental Discipline in a Distracted World',
       desc: 'Mental discipline is quiet control—how to stay steady, focused, and intentional in a world designed to distract you.',
       date: 'March 2026',
-      image: '/blog-images/blggpic.png',
+      image: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800',
       content: `The Power of Mental Discipline in a Distracted World
 
 What Is Mental Discipline, Really?
@@ -336,7 +336,7 @@ When the mind is disciplined, life feels lighter. Decisions feel calmer. Actions
       title: 'The Cognitive Cost of Constant Screen Exposure',
       desc: 'Exploring how excessive screen time affects focus, memory, and deep thinking, and how to rebuild cognitive health.',
       date: 'March 2026',
-      image: '/blog-images/blggpic.png',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800',
       content: `The Cognitive Cost of Constant Screen Exposure
 
 Digital Dementia: What Is Happening to Our Minds?
@@ -379,7 +379,7 @@ Digital tools should serve the human brain, not shape it blindly.`,
       title: 'The Science Behind Human Intelligence and Learning',
       desc: 'Exploring how the brain grows and adapts through life, and how understanding neuroplasticity can transform learning.',
       date: 'March 2026',
-      image: '/blog-images/blggpic.png',
+      image: 'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=800',
       content: `The Science Behind Human Intelligence and Learning
 
 The Brain is Not Finished Yet
@@ -434,7 +434,7 @@ Learning in the future is not only about knowledge. It is about developing the b
       title: 'Do You Really Know Yourself?',
       desc: 'Exploring the importance of self-awareness in a fast-paced world and how it can transform our lives.',
       date: 'March 2026',
-      image: '/blog-images/blggpic.png',
+      image: 'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=800',
       content: `Do You Really Know Yourself?
 
 The Skill We Are Slowly Losing
@@ -507,7 +507,7 @@ In a world that is rushing forward, self-awareness brings you back to yourself. 
       title: 'Neuroplasticity in Action: A New Path for Autism Development',
       desc: 'Training the brain, transforming behavior—how neuroplasticity-guided experiences can support autism development.',
       date: 'March 2026',
-      image: '/blog-images/blggpic.png',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800',
       content: `Neuroplasticity in Action: A New Path for Autism Development
 
 Understanding Autism
@@ -569,7 +569,7 @@ The brain can learn, adapt, grow.`,
       title: 'Mapping the Invisible: Visualizing Human Intelligence as the New Standard for Student Performance',
       desc: 'Beyond traditional grades—how Power BI dashboards transform student performance metrics into actionable insights.',
       date: 'February 2026',
-      image: '/blog-images/blggpic.png',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
       content: `Mapping the Invisible: Visualizing Human Intelligence as the New Standard for Student Performance
 
 The Evolution Beyond Traditional Metrics

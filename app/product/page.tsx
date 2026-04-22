@@ -50,18 +50,6 @@ export default function ProductPage() {
       isFeature: false,
       description: ""
     },
-    "Neuro Band": {
-      title: "Neuro Band",
-      intro: "A smart wearable that monitors brain activity, focus, and stress in real time.",
-      description: "Neuro Band bridges the gap between internal brain activity and clear, actionable insights.",
-      isFeature: true
-    },
-    "Neuro Lens": {
-      title: "Neuro Lens",
-      intro: "A neuro-analytics platform that converts brain signals into actionable insights.",
-      description: "Neuro Lens makes cognitive performance visible, measurable, and actionable.",
-      isFeature: true
-    },
     "Brain Gym": {
       title: "Brain Gym",
       intro: "Cognitive training that keeps the brain active and sharp.",
@@ -77,20 +65,42 @@ export default function ProductPage() {
     }
   }
 
-  const tabs = ["Labs", "Courses", "Workshops", "Neuro Band", "Neuro Lens", "Brain Gym"]
-  const bubbles = Array.from({length:18},(_,i)=>i);
+  const tabs = ["Labs", "Courses", "Workshops", "Brain Gym"]
+  const bubbles = Array.from({ length: 18 }, (_, i) => i);
 
   return (
-    
+
     <main className="min-h-screen bg-[#fcfcfc]">
-      <section className="relative min-h-[80vh] bg-gradient-to-br from-[#0d47a1] to-[#1a3a70] text-white flex items-center justify-center px-6 py-20 overflow-hidden">
-          {bubbles.map((i)=>{ const size=[20,28,36,48,64,80][i%6]; const left=(i*13)%100; const top=(i*17)%100; const opacity=(i%4+2)/10; return <div key={i} className="absolute rounded-full bg-white/10" style={{width:size,height:size,left:`${left}%`,top:`${top}%`,opacity}}/>})}
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h1 className="text-7xl md:text-8xl font-bold mb-8 tracking-tight">Aaruchudar</h1>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Our Innovative Products</h2>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">We are pioneers in human-centered research and intelligent solutions, dedicated to transforming how humanity learns, thinks, and progresses.</p>
-          </div>
-        </section>
+      <section className="relative min-h-[80vh] text-white flex items-center justify-center px-6 py-20 overflow-hidden">
+
+        {/* Background Image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        {/* Blue brand overlay — keeps consistency with rest of site */}
+       
+
+        {/* Content — unchanged */}
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h1 className="text-7xl md:text-8xl font-bold mb-8 tracking-tight">
+            Aaruchudar
+          </h1>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Our Innovative Products
+          </h2>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+            We are pioneers in human-centered research and intelligent solutions,
+            dedicated to transforming how humanity learns, thinks, and progresses.
+          </p>
+        </div>
+      </section>
 
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
@@ -106,7 +116,7 @@ export default function ProductPage() {
           <div className="bg-white p-12 rounded-[2rem] border border-gray-100 shadow-sm">
             <h3 className="text-3xl font-bold text-[#2563eb] mb-4 text-center">{productData[activeTab as keyof typeof productData].title}</h3>
             <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">{productData[activeTab as keyof typeof productData].intro}</p>
-            
+
             {productData[activeTab as keyof typeof productData].isFeature ? (
               <div className="text-center p-10 bg-blue-50 rounded-2xl">
                 <p className="text-lg text-gray-700 italic">"{productData[activeTab as keyof typeof productData].description}"</p>

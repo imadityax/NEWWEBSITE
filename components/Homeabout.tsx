@@ -65,7 +65,7 @@ Through structured, neuroscience-based activities, individuals and teams learn t
                 Our Direction
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                To become a leading cognitive training platform that transforms how people think, learn, and perform across education and organizations.
+                To become a leading cognitive infrastructure platform that transforms how people think, learn, and perform across education and organizations.
               </p>
             </div>
 
