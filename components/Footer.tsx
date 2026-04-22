@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className='absolute bottom-12 left-0 w-full text-[200px] md:text-[250px] font-black leading-none text-black/[0.03] select-none whitespace-nowrap px-8'>
+      <div className='absolute bottom-12 left-0 w-full text-[200px] md:text-[230px] font-black leading-none text-black/[0.03] select-none whitespace-nowrap px-8'>
         AARUCHUDAR
       </div>
 

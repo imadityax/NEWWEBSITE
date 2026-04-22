@@ -49,7 +49,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 min-h-screen flex items-center">
         <div className="w-full md:w-1/2">
           <p className="text-white/60 uppercase tracking-[0.4em] text-xs mb-5">
-            Aaruchudar <p className="text-yellow-400">Pvt Ltd</p>
+            Aaruchudar <span className="text-yellow-400">Pvt Ltd</span>
           </p>
 
           <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-8">
