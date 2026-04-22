@@ -4,18 +4,23 @@ import { useEffect, useRef, useState } from 'react'
 
 const servicesList = [
   {
-    title: 'Decision Architecture',
-    desc: 'We help individuals and organizations build clearer thinking systems, stronger judgment models, and practical decision frameworks for real-world success.',
+    title: 'Human Intelligence Labs',
+    desc: 'Experiential learning spaces designed to build creativity, critical thinking, and leadership through real-world application.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
   },
   {
-    title: 'Cognitive Activation',
-    desc: 'Our programs are designed to sharpen memory, focus, processing speed, and adaptive intelligence using immersive and performance-driven methods.',
+    title: 'Human Intelligence Courses',
+    desc: 'Structured programs that combine practical experience with deeper understanding for meaningful growth.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800',
   },
   {
-    title: 'Leadership Intelligence',
-    desc: 'Develop leadership presence, execution discipline, communication depth, and conscious action for high-pressure environments.',
+    title: 'Human Intelligence Workshop',
+    desc: 'Hands-on, activity-based sessions that develop creativity, teamwork, and execution skills.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
+  },
+  {
+    title: 'Brain Gym',
+    desc: 'Cognitive training that keeps the brain active and sharp through structured exercises designed to improve thinking, focus, and overall mental performance.',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
   },
 ]

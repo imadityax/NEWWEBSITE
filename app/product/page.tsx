@@ -1,5 +1,6 @@
 'use client'
 
+import Footer from '@/components/Footer'
 import { useState } from 'react'
 
 export default function ProductPage() {
@@ -123,6 +124,7 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

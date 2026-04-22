@@ -23,18 +23,14 @@ export default function About() {
             </p>
           </div>
 
-          
+
 
           <p className="text-gray-800 text-lg font-semibold leading-relaxed mb-5">
-            Aaruchudar operates in the human intelligence and decision
-            architecture domain, helping people think clearly, decide wisely,
-            act consciously, and lead effectively in real-world environments.
+            Aaruchudar is a cognitive development platform that enhances human intelligence through neuroscience-based, real-world learning – helping individuals and teams build clarity, better decisions, and stronger performance.
           </p>
 
           <p className="text-gray-600 leading-relaxed">
-            We combine experiential labs, behavioural frameworks, and cognitive
-            activations to build strong thinking systems — not therapy, not
-            diagnosis, but real performance transformation.
+            We work where most systems don’t – inside the mind.
           </p>
 
         </div>
@@ -46,31 +42,30 @@ export default function About() {
 
             <div>
               <h3 className="text-xl font-black text-black mb-2">
-                What We Build
+                What We Do
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Decision systems, thinking structures, and intelligence
-                interfaces that intervene — not just measure.
+                We work on improving how people actually think in real life.
+Through structured, neuroscience-based activities, individuals and teams learn to move from confusion to clarity, from hesitation to decision, and from knowledge to real performance.
+
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-black text-black mb-2">
-                Our Goal
+                Our Purpose
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                To create clarity, original thinking, and conscious action in an
-                AI-driven world.
+                To develop human intelligence in the age of AI by strengthening how individuals and teams think, decide, and perform in real-world situations.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-black text-black mb-2">
-                Who We Serve
+                Our Direction
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Students, professionals, founders, and institutions seeking
-                direction, depth, and stronger decision-making capacity.
+                To become a leading cognitive training platform that transforms how people think, learn, and perform across education and organizations.
               </p>
             </div>
 
@@ -82,12 +77,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div>
-                <h4 className="text-3xl font-black text-black">AI+</h4>
-                <p className="text-sm text-gray-500 font-semibold">
-                  Future Ready Systems
-                </p>
-              </div>
+              
             </div>
 
           </div>

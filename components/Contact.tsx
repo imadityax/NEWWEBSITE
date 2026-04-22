@@ -38,24 +38,19 @@ export default function Contact(){
           </p>
 
           <div className='mt-10 space-y-8'>
-            <div>
-              <h3 className='font-black text-2xl mb-2'>PRESS</h3>
-              <p className='text-gray-600 flex gap-2 items-start'>
-                <MapPin size={18} /> Global Media Office, Innovation District
-              </p>
-            </div>
+            
 
             <div>
-              <h3 className='font-black text-2xl mb-2'>SALES</h3>
+              <h3 className='font-black text-2xl mb-2'>Mail</h3>
               <p className='text-gray-600 flex gap-2 items-center'>
-                <Mail size={18} /> sales@yourbrand.com
+                <Mail size={18} /> hi@aaruchudar.com
               </p>
             </div>
 
             <div>
               <h3 className='font-black text-2xl mb-2'>HEAD OFFICE</h3>
               <p className='text-gray-600 flex gap-2 items-start'>
-                <MapPin size={18} /> Sector 62, Noida, India
+                <MapPin size={18} /> Chennai, India
               </p>
             </div>
           </div>

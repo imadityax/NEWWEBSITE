@@ -307,46 +307,20 @@ export default function AboutPage(){
         </section>
 
         {/* CTA SECTION */}
-        <section className="py-24 px-6 bg-[#0d47a1] text-white">
+        <section className="py-24 px-6 bg-white text-black">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8">Ready to Partner With Us?</h2>
-            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">Join us on our mission to advance human intelligence and create meaningful impact. Whether you're looking to innovate, collaborate, or join our team, we'd love to work with you.</p>
+            <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">Join us on our mission to advance human intelligence and create meaningful impact. Whether you're looking to innovate, collaborate, or join our team, we'd love to work with you.</p>
             
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {[
-                {
-                  title: 'Explore Solutions',
-                  desc: 'Discover how our products and services can transform your organization.',
-                  cta: 'Learn More'
-                },
-                {
-                  title: 'Join Our Team',
-                  desc: 'Be part of a mission-driven organization working on cutting-edge research.',
-                  cta: 'View Careers'
-                },
-                {
-                  title: 'Get In Touch',
-                  desc: 'Connect with our team to discuss partnerships and opportunities.',
-                  cta: 'Contact Us'
-                }
-              ].map((item) => (
-                <div key={item.title} className="bg-white/10 backdrop-blur rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-colors">
-                  <h4 className="text-2xl font-semibold mb-4">{item.title}</h4>
-                  <p className="text-white/80 mb-6">{item.desc}</p>
-                  <button className="bg-[#64b5f6] hover:bg-[#42a5f5] text-white font-bold py-3 px-8 rounded-lg transition-colors">
-                    {item.cta}
-                  </button>
-                </div>
-              ))}
-            </div>
+           
 
-            <div className="bg-white/10 backdrop-blur rounded-xl p-12 border border-white/20">
-              <h4 className="text-3xl font-bold mb-8">Get In Touch</h4>
+            <div className="bg-gray-50 rounded-xl p-12 border border-gray-200">
+              <h4 className="text-3xl font-bold mb-8 text-gray-900">Get In Touch</h4>
               <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <input type="text" placeholder="Your Name" className="w-full bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-white/60"/>
-                <input type="email" placeholder="Your Email" className="w-full bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-white/60"/>
+                <input type="text" placeholder="Your Name" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500"/>
+                <input type="email" placeholder="Your Email" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500"/>
               </div>
-              <textarea placeholder="Your Message" className="w-full bg-white/10 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-white/60 h-32 mb-8"></textarea>
+              <textarea placeholder="Your Message" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 h-32 mb-8"></textarea>
               <button className="w-full bg-[#64b5f6] hover:bg-[#42a5f5] text-white font-bold py-3 rounded-lg transition-colors text-lg">
                 Send Message
               </button>

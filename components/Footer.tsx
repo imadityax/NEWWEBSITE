@@ -1,31 +1,34 @@
 import Link from 'next/link'
-import { Share2, X, Video, Lock } from 'lucide-react'
+import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import Services from './Services'
 
 export default function Footer() {
   const cols = {
-    PRODUCTS: [
-      { name: 'Billing', href: '/' },
-      { name: 'Collections', href: '/' },
-      { name: 'RevRec', href: '/' },
-      { name: 'Reporting', href: '/' },
-      { name: 'AI Tools', href: '/' },
-      { name: 'Integrations', href: '/' },
+    Labs: [
+      { name: 'Clarity as Culture', href: '/' },
+      { name: 'Decision Making Without Drama', href: '/' },
+      { name: 'Inner Focus in a Noisy World', href: '/' },
+      { name: 'The Power of Listening', href: '/' },
+      { name: 'Intelligent Conflict and Recovery', href: '/' },
+      { name: 'Systematic Thinking', href: '/' },
+      { name: 'Voice, Value and Vulnerability', href: '/' },
+      { name: 'Leadership Without Limitation', href: '/' },
     ],
 
-    SOLUTIONS: [
-      { name: 'Finance & Accounting', href: '/' },
-      { name: 'RevOps', href: '/' },
-      { name: 'Product Engineering', href: '/' },
-      { name: 'Partners', href: '/' },
-      { name: 'Hybrid Models', href: '/' },
+    'Brain Gym': [
+      { name: 'Thinking Brain', href: '/' },
+      { name: 'Emotional Brain', href: '/' },
+      { name: 'Focus and Attention System', href: '/' },
+      { name: 'Memory and learning System', href: '/' },
+      { name: 'Balance and Coordination', href: '/' },
     ],
 
     PROGRAMS: [
-      { name: 'HUMAN INTELLIGENCE LABS', href: '/' },
-      { name: 'HUMAN INTELLIGENCE COURSES', href: '/' },
-      { name: 'HUMAN INTELLIGENCE WORKSHOP', href: '/' },
-      { name: 'HUMAN INTELLIGENCE EVENTS', href: '/' },
-      { name: 'NEURO TECH SUITE', href: '/' },
+      { name: 'Human Intelligence Labs', href: '/' },
+      { name: 'Human Intelligence Courses', href: '/' },
+      { name: 'Human Intelligence Workshop', href: '/' },
+      { name: 'Brain Gym', href: '/' },
+
     ],
 
     COMPANY: [
@@ -70,15 +73,32 @@ export default function Footer() {
           </div>
 
           <div className='flex gap-3'>
-            <div className='w-10 h-10 rounded-full bg-[#0f1f45] text-white flex items-center justify-center'>
-              <Share2 size={18} />
-            </div>
-            <div className='w-10 h-10 rounded-full bg-[#0f1f45] text-white flex items-center justify-center'>
-              <X size={18} />
-            </div>
-            <div className='w-10 h-10 rounded-full bg-[#0f1f45] text-white flex items-center justify-center'>
-              <Video size={18} />
-            </div>
+            <a
+              href='https://instagram.com/aaruchudar'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-10 h-10 rounded-full bg-[#0f1f45] text-white flex items-center justify-center text-lg'
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href='https://www.linkedin.com/company/aaruchudar/posts/?feedView=all'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-10 h-10 rounded-full bg-[#0f1f45] text-white flex items-center justify-center text-lg'
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href='https://twitter.com/Aaruchudar_06'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-10 h-10 rounded-full bg-[#0f1f45] text-white flex items-center justify-center text-lg'
+            >
+              <FaTwitter />
+            </a>
           </div>
         </div>
       </div>
@@ -90,14 +110,10 @@ export default function Footer() {
       <div className='max-w-7xl mx-auto mt-44 relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-gray-500 text-sm'>
         <div className='flex flex-wrap gap-8'>
           <span>© 2026 AARUCHUDAR. All rights reserved.</span>
-          <span>Terms of Service</span>
-          <span>Privacy Policy</span>
+          
         </div>
 
-        <div className='flex items-center gap-2 border border-gray-200 rounded-xl px-4 py-2 bg-white'>
-          <Lock size={14} />
-          <span>Secure & Trusted</span>
-        </div>
+        
       </div>
     </footer>
   )
