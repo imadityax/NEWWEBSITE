@@ -14,18 +14,36 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
+
+    if (!form.name || !form.email || !form.message) {
+      alert("Please fill all fields");
+      return;
+    }
+
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setForm({
-      name: "",
-      email: "",
-      message: "",
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
     });
 
+    const data = await res.json();
     setIsSubmitting(false);
-    alert("Thank you for contacting Aaruchudar. We’ll get back to you soon.");
+
+    if (data.success) {
+      alert("Message sent successfully!");
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      alert(data.error || "Something went wrong");
+    }
   };
 
   return (
@@ -33,45 +51,45 @@ export default function ContactPage() {
 
       {/* HERO */}
       {/* HERO */}
-<section className="relative py-24 px-6 text-center overflow-hidden">
+      <section className="relative py-24 px-6 text-center overflow-hidden">
 
-  {/* Background Image */}
-  <div
-    className="absolute inset-0"
-    style={{
-      backgroundImage:
-        "url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600)",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-  />
+        {/* Background Image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
 
 
 
-  {/* Content — unchanged */}
-  <div className="relative z-10">
-    <div className="inline-block mb-6">
-      <div className="px-4 py-2 bg-white/20 rounded-full text-white text-sm font-semibold">
-        Let's Connect
-      </div>
-    </div>
+        {/* Content — unchanged */}
+        <div className="relative z-10">
+          <div className="inline-block mb-6">
+            <div className="px-4 py-2 bg-white/20 rounded-full text-white text-sm font-semibold">
+              Let's Connect
+            </div>
+          </div>
 
-    <h1 className="text-7xl font-serif font-bold text-white mb-6">
-      Aaruchudar
-    </h1>
+          <h1 className="text-7xl font-serif font-bold text-white mb-6">
+            Aaruchudar
+          </h1>
 
-    <h2 className="text-5xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight mb-6 text-white">
-      Build Better Thinking
-      <br />
-      Together.
-    </h2>
+          <h2 className="text-5xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight mb-6 text-white">
+            Build Better Thinking
+            <br />
+            Together.
+          </h2>
 
-    <p className="max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
-      Have a question, partnership idea, workshop request, or career interest?
-      Reach out to us and let's explore how we can work together.
-    </p>
-  </div>
-</section>
+          <p className="max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
+            Have a question, partnership idea, workshop request, or career interest?
+            Reach out to us and let's explore how we can work together.
+          </p>
+        </div>
+      </section>
 
       {/* CONTACT SECTION */}
       <section className="bg-[#f8fafc] py-24 px-6">

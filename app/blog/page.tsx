@@ -271,59 +271,8 @@ export default function BlogPage() {
           </motion.section>
 
           {/* NEWSLETTER */}
-          <motion.section
-            className="py-24 px-6 bg-white"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <motion.div
-              className="max-w-5xl mx-auto text-center rounded-[2rem] bg-gradient-to-r from-[#1d4ed8] to-[#2563eb] text-white p-14"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <motion.h3
-                className="text-4xl md:text-5xl font-bold"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-              >
-                Stay Updated
-              </motion.h3>
-              <motion.p
-                className="mt-6 text-lg text-white/85 max-w-2xl mx-auto leading-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.1 }}
-              >
-                Get the latest insights, product launches and innovation stories from Aaruchudar.
-              </motion.p>
-              <motion.div
-                className="mt-8 flex flex-col md:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-              >
-                <motion.input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-6 py-4 rounded-full text-black min-w-[280px] outline-none"
-                  whileFocus={{ scale: 1.02 }}
-                />
-                <motion.button
-                  className="px-8 py-4 rounded-full bg-white text-blue-600 font-semibold"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Subscribe
-                </motion.button>
-                
-              </motion.div>
-            </motion.div>
+          
             
-          </motion.section>
           <Footer />
         </>
         

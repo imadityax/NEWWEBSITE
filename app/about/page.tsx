@@ -19,7 +19,7 @@ export default function AboutPage() {
             className="absolute inset-0"
             style={{
               backgroundImage:
-                "url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600)",
+                "url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -251,35 +251,7 @@ export default function AboutPage() {
 
 
         {/* CTA SECTION */}
-        <section className="py-24 px-6 bg-white text-black">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8">
-              Build Better Thinking
-            </h2>
-
-            <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
-              Ready to rethink how you think? Let’s build clarity,
-              better decisions, and stronger performance together.
-            </p>
-
-            <div className="bg-gray-50 rounded-xl p-12 border border-gray-200">
-              <h4 className="text-3xl font-bold mb-8 text-gray-900">
-                Get In Touch
-              </h4>
-
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <input type="text" placeholder="Your Name" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3" />
-                <input type="email" placeholder="Your Email" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3" />
-              </div>
-
-              <textarea placeholder="Your Message" className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-32 mb-8"></textarea>
-
-              <button className="w-full bg-[#64b5f6] hover:bg-[#42a5f5] text-white font-bold py-3 rounded-lg">
-                Send Message
-              </button>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Footer */}
         <Footer />

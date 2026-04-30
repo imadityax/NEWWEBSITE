@@ -15,6 +15,13 @@ export default function CareersPage() {
   const [selectedJob, setSelectedJob] = useState<any>(null);
   const [isGeneralApply, setIsGeneralApply] = useState(false);
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [resumeLink, setResumeLink] = useState("");
+  const [message, setMessage] = useState("");
+  const [file, setFile] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
+
   const categories = [
     "All",
     "Creative",
@@ -110,7 +117,7 @@ export default function CareersPage() {
           }}
         />
 
-       
+
 
         {/* Content — unchanged */}
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -235,41 +242,108 @@ export default function CareersPage() {
             </div>
 
             <form
-              className="p-8 space-y-4"
-              onSubmit={(e) => {
+              className="p-8 space-y-6"
+              onSubmit={async (e) => {
                 e.preventDefault();
-                alert("Application Sent!");
-                setSelectedJob(null);
+
+                // ✅ validation
+                if (!name || !email) {
+                  alert("Name and Email are required");
+                  return;
+                }
+
+                if (!file && !resumeLink) {
+                  alert("Upload resume or provide link");
+                  return;
+                }
+
+                setLoading(true);
+
+                const formData = new FormData();
+                formData.append("name", name);
+                formData.append("email", email);
+                formData.append("resumeLink", resumeLink);
+                formData.append("message", message);
+
+                if (file) {
+                  formData.append("file", file);
+                }
+
+                const res = await fetch("/api/apply", {
+                  method: "POST",
+                  body: formData,
+                });
+
+                const data = await res.json();
+                setLoading(false);
+
+                if (data.success) {
+                  alert("Application Sent!");
+                  setSelectedJob(null);
+
+                  // reset
+                  setName("");
+                  setEmail("");
+                  setResumeLink("");
+                  setMessage("");
+                  setFile(null);
+                } else {
+                  alert(data.error || "Something went wrong");
+                }
               }}
             >
+              <h4 className="text-lg font-semibold">Applicant Information</h4>
+
+              {/* Name */}
               <input
-                required
                 type="text"
                 placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full border p-3 rounded-lg"
               />
 
+              {/* Email */}
               <input
-                required
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full border p-3 rounded-lg"
               />
 
+              {/* Resume Upload */}
               <input
-                required
-                type="url"
-                placeholder="Resume Link"
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={(e) => {
+                  if (e.target.files) setFile(e.target.files[0]);
+                }}
                 className="w-full border p-3 rounded-lg"
               />
 
+              {/* Resume Link */}
+              <input
+                type="url"
+                placeholder="Or paste resume link"
+                value={resumeLink}
+                onChange={(e) => setResumeLink(e.target.value)}
+                className="w-full border p-3 rounded-lg"
+              />
+
+              {/* Message */}
               <textarea
-                placeholder="Tell us what drives you and what you bring."
+                placeholder="Why do you want to join?"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full border p-3 rounded-lg h-28"
               />
 
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold">
-                Submit Application
+              <button
+                disabled={loading}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg"
+              >
+                {loading ? "Sending..." : "Submit Application"}
               </button>
             </form>
           </div>

@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
       title: 'The Science Behind Gut Feeling - Is It Real, or Just in Your Head?',
       desc: 'What gut feeling really is, how intuition forms in the brain, and when to trust it versus question it.',
       date: 'April 2026',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800',
+      image: 'https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?w=800',
       content: `The Science Behind Gut Feeling - Is It Real, or Just in Your Head?
 
 You're about to make a decision. Nothing dramatic. Just something simple - choosing a job, trusting a person, saying yes or no.

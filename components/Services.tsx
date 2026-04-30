@@ -21,7 +21,7 @@ const servicesList = [
   {
     title: 'Brain Gym',
     desc: 'Cognitive training that keeps the brain active and sharp through structured exercises designed to improve thinking, focus, and overall mental performance.',
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800', // neural/brain network (same as hero — consistent)
+    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800', // neural/brain network (same as hero — consistent)
   },
 ]
 

@@ -75,12 +75,12 @@ export default function ProductPage() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600)",
+            backgroundImage: "url(https://images.unsplash.com/photo-1553484771-371a605b060b?w=1600)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
-       
+
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h1 className="text-7xl md:text-8xl font-bold mb-8 tracking-tight">
@@ -104,11 +104,10 @@ export default function ProductPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-8 py-3 rounded-full font-bold transition-all ${
-                  activeTab === tab
+                className={`px-8 py-3 rounded-full font-bold transition-all ${activeTab === tab
                     ? "bg-[#2563eb] text-white shadow-lg"
                     : "bg-white text-gray-600 border border-gray-200"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
