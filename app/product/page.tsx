@@ -11,7 +11,7 @@ export default function ProductPage() {
       title: "Human Intelligence Labs",
       intro: "Experiential learning spaces designed to build creativity, critical thinking, and leadership through real-world application.",
       items: [
-        { name: "Clarity as Culture", desc: "Builds clarity as a consistent way of thinking.", img: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400' },
+        { name: "Clarity as Culture", desc: "Builds clarity as a consistent way of thinking", img: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400' },
         { name: "Decision Making Without Drama", desc: "Enables calm and practical decision-making.", img: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400' },
         { name: "Inner Focus in a Noisy World", desc: "Strengthens mental focus despite distractions.", img: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=400' },
         { name: "The Power of Listening", desc: "Develops true understanding and connection.", img: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=400' },
