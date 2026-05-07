@@ -22,12 +22,13 @@ export default function Navbar() {
 
   const links = [
     { name: 'Home', href: '/' },
-    { name: 'Product', href: '/product' },
-    { name: 'About', href: '/about' },
-    { name: 'Organisation', href: '/org' },
     { name: 'blog', href: '/blog' },
+    { name: 'About', href: '/about' },
     { name: 'careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Product', href: '/product' },
+    { name: 'Services', href: '/services' },
+    { name: 'Organisation', href: '/org' },
   ]
 
   const barColor = scrolled ? 'bg-black' : 'bg-white'
