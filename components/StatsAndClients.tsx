@@ -9,33 +9,45 @@ const stats = [
 
 export default function StatsAndClients() {
   return (
-    <section className="pt-0 pb-12 px-8 md:px-16 bg-white text-center w-full overflow-hidden">
-  <p className="text-gray-500 text-sm mb-1">Grow with us</p>
+    <section className="pt-0 pb-14 sm:pb-16 px-5 sm:px-8 md:px-16 bg-white text-center w-full overflow-hidden">
 
-  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-    Build Better Thinking
-  </h2>
+      <p className="text-gray-500 text-xs sm:text-sm mb-2">
+        Grow with us
+      </p>
 
-  <p className="text-gray-600 text-sm mb-14 max-w-xl mx-auto">
-    Join Aaruchudar in shaping clarity, decision-making, focus, and human performance through neuroscience-based learning experiences.
-  </p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+        Build Better Thinking
+      </h2>
 
-  {/* Floating Stats */}
-  <div className="relative w-full overflow-hidden pb-32">
-    <div className="flex gap-16 md:gap-60 items-center whitespace-nowrap animate-marquee">
-      {[...stats, ...stats].map((stat, index) => (
-        <div key={index} className="min-w-fit">
-          <p className="text-4xl md:text-5xl font-bold text-gray-900">
-            {stat.value}
-          </p>
+      <p className="text-gray-600 text-sm sm:text-base mb-10 sm:mb-14 max-w-xl mx-auto leading-relaxed">
+        Join Aaruchudar in shaping clarity, decision-making,
+        focus, and human performance through neuroscience-based
+        learning experiences.
+      </p>
 
-          <p className="text-gray-500 text-sm mt-2">
-            {stat.label}
-          </p>
+      {/* Floating Stats */}
+      <div className="relative w-full overflow-hidden pb-16 sm:pb-24">
+
+        <div className="flex gap-10 sm:gap-16 md:gap-40 items-center whitespace-nowrap animate-marquee">
+
+          {[...stats, ...stats].map((stat, index) => (
+            <div key={index} className="min-w-fit">
+
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                {stat.value}
+              </p>
+
+              <p className="text-gray-500 text-xs sm:text-sm mt-2">
+                {stat.label}
+              </p>
+
+            </div>
+          ))}
+
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+
+      </div>
+
+    </section>
   )
 }

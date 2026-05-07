@@ -15,17 +15,18 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
+
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
         setFade(true);
-      }, 500); // fade out duration before switching
-    }, 4000); // switch every 4s
+      }, 500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black">
+    <section className="relative min-h-[100svh] overflow-hidden bg-black">
       <Navbar />
 
       {/* Background Slideshow */}
@@ -43,16 +44,17 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 min-h-screen flex items-center">
-        <div className="w-full md:w-1/2">
-          <p className="text-white/60 uppercase tracking-[0.4em] text-xs mb-5">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-16 min-h-[100svh] flex items-center">
+        <div className="w-full md:w-1/2 pt-20 md:pt-0">
+          
+          <p className="text-white/60 uppercase tracking-[0.2em] sm:tracking-[0.35em] text-[10px] sm:text-xs mb-4 sm:mb-5">
             Aaruchudar <span className="text-yellow-400">Pvt Ltd</span>
           </p>
 
-          <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-8">
+          <h1 className="text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight sm:leading-tight md:leading-[1.1] mb-6 sm:mb-8">
             Train the mind
             <br />
             before training the
@@ -60,24 +62,27 @@ export default function Hero() {
             skill.
           </h1>
 
-
         </div>
       </div>
 
       {/* Dot indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => {
               setFade(false);
+
               setTimeout(() => {
                 setCurrent(i);
                 setFade(true);
               }, 500);
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? "bg-white w-5" : "bg-white/40"
-              }`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === current
+                ? "bg-white w-5"
+                : "bg-white/40 w-2"
+            }`}
           />
         ))}
       </div>

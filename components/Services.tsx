@@ -6,27 +6,34 @@ const servicesList = [
   {
     title: 'Human Intelligence Labs',
     desc: 'Experiential learning spaces designed to build creativity, critical thinking, and leadership through real-world application.',
-    image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800', // people in lab/group activity
+    image:
+      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800',
   },
   {
     title: 'Human Intelligence Courses',
     desc: 'Structured programs that combine practical experience with deeper understanding for meaningful growth.',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800', // person studying/taking notes
+    image:
+      'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800',
   },
   {
     title: 'Human Intelligence Workshop',
     desc: 'Hands-on, activity-based sessions that develop creativity, teamwork, and execution skills.',
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800', // team workshop session
+    image:
+      'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800',
   },
   {
     title: 'Brain Gym',
     desc: 'Cognitive training that keeps the brain active and sharp through structured exercises designed to improve thinking, focus, and overall mental performance.',
-    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800', // neural/brain network (same as hero — consistent)
+    image:
+      'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800',
   },
 ]
 
 export default function Services() {
-  const [visible, setVisible] = useState<boolean[]>(servicesList.map(() => false))
+  const [visible, setVisible] = useState<boolean[]>(
+    servicesList.map(() => false)
+  )
+
   const blockRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
@@ -43,6 +50,7 @@ export default function Services() {
               next[i] = true
               return next
             })
+
             obs.disconnect()
           }
         },
@@ -57,15 +65,27 @@ export default function Services() {
   }, [])
 
   return (
-    <section id="services" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 md:px-16">
+    <section
+      id="services"
+      className="py-16 sm:py-20 md:py-24 bg-white overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-16">
 
-        <div className="flex gap-20">
+        {/* Mobile Heading */}
+        <div className="md:hidden mb-12">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-800 font-semibold">
+            Our Services
+          </p>
+
+          <div className="mt-3 w-10 h-[2px] bg-blue-600 rounded" />
+        </div>
+
+        <div className="flex gap-10 md:gap-20">
 
           {/* Left Sticky Label */}
           <div className="hidden md:flex flex-col items-start w-44 flex-shrink-0">
             <div className="sticky top-32 pt-20">
-              <p className="text-s uppercase tracking-[0.35em] text-gray-800 font-semibold">
+              <p className="text-xs uppercase tracking-[0.35em] text-gray-800 font-semibold">
                 Our Services
               </p>
 
@@ -75,6 +95,7 @@ export default function Services() {
 
           {/* Right Content */}
           <div className="flex-1 flex flex-col divide-y divide-gray-100">
+
             {servicesList.map((service, index) => {
               const isReverse = index % 2 !== 0
 
@@ -88,17 +109,18 @@ export default function Services() {
                     opacity: visible[index] ? 1 : 0,
                     transform: visible[index]
                       ? 'translateY(0)'
-                      : 'translateY(30px)',
+                      : 'translateY(24px)',
                     transition: 'all 0.7s ease',
                     transitionDelay: `${index * 120}ms`,
                   }}
-                  className={`flex flex-col md:flex-row items-center gap-14 py-16 ${
+                  className={`flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-14 py-12 sm:py-14 md:py-16 ${
                     isReverse ? 'md:flex-row-reverse' : ''
                   }`}
                 >
+
                   {/* Image */}
                   <div className="flex-shrink-0">
-                    <div className="w-52 h-52 md:w-60 md:h-60 rounded-full overflow-hidden ring-4 ring-gray-100 hover:scale-105 transition duration-500">
+                    <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full overflow-hidden ring-4 ring-gray-100 hover:scale-105 transition duration-500">
                       <img
                         src={service.image}
                         alt={service.title}
@@ -108,20 +130,22 @@ export default function Services() {
                   </div>
 
                   {/* Text */}
-                  <div className="flex-1 max-w-xl">
+                  <div className="flex-1 max-w-xl text-center md:text-left">
+
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                       {service.title}
                     </h3>
 
-                    <p className="text-gray-500 leading-relaxed mb-6">
+                    <p className="text-sm sm:text-base text-gray-500 leading-relaxed mb-2">
                       {service.desc}
                     </p>
 
-                    
                   </div>
+
                 </div>
               )
             })}
+
           </div>
 
         </div>
